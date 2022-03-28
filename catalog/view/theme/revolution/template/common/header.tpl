@@ -543,9 +543,11 @@ function max_height_div(div){var maxheight = 0;$(div).each(function(){$(this).re
 	<?php if ($informations || $revtheme_header_links || $revtheme_dop_menus_2 || $revtheme_dop_menus_3 || $rev_lang || $rev_curr || $rev_srav || $rev_wish || $rev_acc || $setting_all_settings['mobile_header']) { ?>
 	<div id="top">
 		<div class="container">
+            <!--
 			<?php if ($setting_all_settings['mobile_header'] && $is_mobile) { ?>
 				<div class="hidden-sm hidden-md hidden-lg"><?php echo $cart_mobi; ?></div>
 			<?php } ?>
+            -->
 			<?php if ($informations || $revtheme_header_links || $revtheme_dop_menus_2 || $revtheme_dop_menus_3 || $setting_all_settings['mobile_header']) { ?>
 				<?php if ($is_mobile) { ?>
 				<div class="hidden-sm hidden-md hidden-lg mobile_info">

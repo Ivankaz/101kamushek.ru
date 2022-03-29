@@ -2,22 +2,22 @@
 	<?php if ($setting_header_cart['type'] == 'standart') { ?>
 		<?php if ($is_desctope) { ?>
 		<button type="button" class="cart dropdown-toggle hidden-xs hidden-sm" data-toggle="dropdown">
-			<span id="cart-total"><?php echo $text_items; ?></span>
+			<span id="cart-total_mobi"><?php echo $text_items; ?></span>
 			<span class="icorightmenu"><i class="fa fa-chevron-down"></i></span>
 		</button>
 		<?php } ?>
 		<?php if ($is_mobile) { ?>
 		<button class="cart hidden-md hidden-lg" onclick="get_revpopup_cart('', 'show_cart', '');">
-			<span id="cart-total-popup"><?php echo $text_items; ?></span>
+			<span id="cart-total_mobi"><?php echo $text_items; ?></span>
 		</button>
 		<?php } ?>
 	<?php } else if ($setting_header_cart['type'] == 'redirect') { ?>
 		<button class="cart" onclick="get_revpopup_cart('', 'redirect_cart', '');">
-			<span id="cart-total"><?php echo $text_items; ?></span>
+			<span id="cart-total_mobi"><?php echo $text_items; ?></span>
 		</button>
 	<?php } else { ?>
 		<button class="cart" onclick="get_revpopup_cart('', 'show_cart', '');">
-			<span id="cart-total"><?php echo $text_items; ?></span>
+			<span id="cart-total_mobi"><?php echo $text_items; ?></span>
 		</button>
 	<?php } ?>
 	<?php if ($setting_header_cart['type'] == 'standart' && $is_desctope) { ?>

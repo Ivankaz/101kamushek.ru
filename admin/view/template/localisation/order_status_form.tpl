@@ -45,6 +45,9 @@
               <div class="input-group"><span class="input-group-addon"><img src="language/<?php echo $language['code']; ?>/<?php echo $language['code']; ?>.png" title="<?php echo $language['name']; ?>" /></span>
                 <input type="text" name="order_status[<?php echo $language['language_id']; ?>][comment]" value="<?php echo isset($order_status[$language['language_id']]) ? $order_status[$language['language_id']]['comment'] : ''; ?>" placeholder="<?php echo $entry_comment; ?>" class="form-control" />
               </div>
+              <?php if (isset($error_comment[$language['language_id']])) { ?>
+              <div class="text-danger"><?php echo $error_comment[$language['language_id']]; ?></div>
+              <?php } ?>
               <?php } ?>
             </div>
           </div>

@@ -279,6 +279,13 @@ class ControllerLocalisationOrderStatus extends Controller {
 			$data['error_name'] = array();
 		}
 
+        if (isset($this->error['comment'])) {
+			$data['error_comment'] = $this->error['comment'];
+		} else {
+			$data['error_comment'] = array();
+		}
+
+
 		$url = '';
 
 		if (isset($this->request->get['sort'])) {
@@ -341,6 +348,10 @@ class ControllerLocalisationOrderStatus extends Controller {
 			if ((utf8_strlen($value['name']) < 3) || (utf8_strlen($value['name']) > 32)) {
 				$this->error['name'][$language_id] = $this->language->get('error_name');
 			}
+            if (utf8_strlen($value['comment']) > 255) {
+				$this->error['comment'][$language_id] = $this->language->get('error_comment');
+			}
+
 		}
 
 		return !$this->error;

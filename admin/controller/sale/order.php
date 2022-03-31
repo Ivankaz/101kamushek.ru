@@ -808,6 +808,7 @@ class ControllerSaleOrder extends Controller {
 
 			$data['column_product'] = $this->language->get('column_product');
 			$data['column_model'] = $this->language->get('column_model');
+            $data['column_image'] = $this->language->get('column_image');
 			$data['column_quantity'] = $this->language->get('column_quantity');
 			$data['column_price'] = $this->language->get('column_price');
 			$data['column_total'] = $this->language->get('column_total');
@@ -1039,14 +1040,14 @@ class ControllerSaleOrder extends Controller {
 					}
 				}
 
-                $productImage = $this->model_catalog_product->getProductImages($product['product_id'])[0]['image'];
+                $productImage = '/image/'.$this->model_catalog_product->getProductImage($product['product_id'])['image'];
 
 				$data['products'][] = array(
 					'order_product_id' => $product['order_product_id'],
 					'product_id'       => $product['product_id'],
 					'name'    	 	   => $product['name'],
+                    'image'            => $productImage,
 					'model'    		   => $product['model'],
-					'image'    		   => $productImage,
 					'option'   		   => $option_data,
 					'quantity'		   => $product['quantity'],
 					'price'    		   => $this->currency->format($product['price'] + ($this->config->get('config_tax') ? $product['tax'] : 0), $order_info['currency_code'], $order_info['currency_value']),

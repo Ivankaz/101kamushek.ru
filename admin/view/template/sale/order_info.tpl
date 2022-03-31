@@ -148,6 +148,7 @@
           <thead>
             <tr>
               <td class="text-left"><?php echo $column_product; ?></td>
+              <td class="text-left"><?php echo $column_image; ?></td>
               <td class="text-left"><?php echo $column_model; ?></td>
               <td class="text-right"><?php echo $column_quantity; ?></td>
               <td class="text-right"><?php echo $column_price; ?></td>
@@ -166,6 +167,8 @@
                 &nbsp;<small> - <?php echo $option['name']; ?>: <a href="<?php echo $option['href']; ?>"><?php echo $option['value']; ?></a></small>
                 <?php } ?>
                 <?php } ?></td>
+              <td class="text-left">
+                <img width="150" src="<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>"></img></td>
               <td class="text-left"><?php echo $product['model']; ?></td>
               <td class="text-right"><?php echo $product['quantity']; ?></td>
               <td class="text-right"><?php echo $product['price']; ?></td>
@@ -176,6 +179,7 @@
             <tr>
               <td class="text-left"><a href="<?php echo $voucher['href']; ?>"><?php echo $voucher['description']; ?></a></td>
               <td class="text-left"></td>
+              <td class="text-left"></td>
               <td class="text-right">1</td>
               <td class="text-right"><?php echo $voucher['amount']; ?></td>
               <td class="text-right"><?php echo $voucher['amount']; ?></td>
@@ -183,7 +187,7 @@
             <?php } ?>
             <?php foreach ($totals as $total) { ?>
             <tr>
-              <td colspan="4" class="text-right"><?php echo $total['title']; ?></td>
+              <td colspan="5" class="text-right"><?php echo $total['title']; ?></td>
               <td class="text-right"><?php echo $total['text']; ?></td>
             </tr>
             <?php } ?>

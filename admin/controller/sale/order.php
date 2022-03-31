@@ -1007,6 +1007,7 @@ class ControllerSaleOrder extends Controller {
 
 			// Uploaded files
 			$this->load->model('tool/upload');
+			$this->load->model('catalog/product');
 
 			$data['products'] = array();
 
@@ -1038,11 +1039,14 @@ class ControllerSaleOrder extends Controller {
 					}
 				}
 
+                $productImage = $this->model_catalog_product->getProductImages($product['product_id'])[0]['image'];
+
 				$data['products'][] = array(
 					'order_product_id' => $product['order_product_id'],
 					'product_id'       => $product['product_id'],
 					'name'    	 	   => $product['name'],
 					'model'    		   => $product['model'],
+					'image'    		   => $productImage,
 					'option'   		   => $option_data,
 					'quantity'		   => $product['quantity'],
 					'price'    		   => $this->currency->format($product['price'] + ($this->config->get('config_tax') ? $product['tax'] : 0), $order_info['currency_code'], $order_info['currency_value']),

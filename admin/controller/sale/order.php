@@ -1009,6 +1009,7 @@ class ControllerSaleOrder extends Controller {
 			// Uploaded files
 			$this->load->model('tool/upload');
 			$this->load->model('catalog/product');
+            $url = new Url(HTTP_CATALOG, $this->config->get('config_secure') ? HTTP_CATALOG : HTTPS_CATALOG);
 
 			$data['products'] = array();
 
@@ -1041,6 +1042,7 @@ class ControllerSaleOrder extends Controller {
 				}
 
                 $productImage = '/image/'.$this->model_catalog_product->getProductImage($product['product_id'])['image'];
+                $productHrefView = $url->link('product/product', 'product_id=' . $product['product_id']);
 
 				$data['products'][] = array(
 					'order_product_id' => $product['order_product_id'],
@@ -1052,7 +1054,8 @@ class ControllerSaleOrder extends Controller {
 					'quantity'		   => $product['quantity'],
 					'price'    		   => $this->currency->format($product['price'] + ($this->config->get('config_tax') ? $product['tax'] : 0), $order_info['currency_code'], $order_info['currency_value']),
 					'total'    		   => $this->currency->format($product['total'] + ($this->config->get('config_tax') ? ($product['tax'] * $product['quantity']) : 0), $order_info['currency_code'], $order_info['currency_value']),
-					'href'     		   => $this->url->link('catalog/product/edit', 'token=' . $this->session->data['token'] . '&product_id=' . $product['product_id'], true)
+					'href'     		   => $this->url->link('catalog/product/edit', 'token=' . $this->session->data['token'] . '&product_id=' . $product['product_id'], true),
+					'href_view'        => $productHrefView
 				);
 			}
 

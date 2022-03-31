@@ -38,6 +38,16 @@
               <?php } ?>
             </div>
           </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label"><?php echo $entry_comment; ?></label>
+            <div class="col-sm-10">
+              <?php foreach ($languages as $language) { ?>
+              <div class="input-group"><span class="input-group-addon"><img src="language/<?php echo $language['code']; ?>/<?php echo $language['code']; ?>.png" title="<?php echo $language['name']; ?>" /></span>
+                <input type="text" name="order_status[<?php echo $language['language_id']; ?>][comment]" value="<?php echo isset($order_status[$language['language_id']]) ? $order_status[$language['language_id']]['comment'] : ''; ?>" placeholder="<?php echo $entry_comment; ?>" class="form-control" />
+              </div>
+              <?php } ?>
+            </div>
+          </div>
         </form>
       </div>
     </div>

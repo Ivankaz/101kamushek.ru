@@ -262,6 +262,7 @@ class ControllerLocalisationOrderStatus extends Controller {
 		$data['text_form'] = !isset($this->request->get['order_status_id']) ? $this->language->get('text_add') : $this->language->get('text_edit');
 
 		$data['entry_name'] = $this->language->get('entry_name');
+		$data['entry_comment'] = $this->language->get('entry_comment');
 
 		$data['button_save'] = $this->language->get('button_save');
 		$data['button_cancel'] = $this->language->get('button_cancel');

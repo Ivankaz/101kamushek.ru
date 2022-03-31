@@ -14,6 +14,7 @@ $_['column_action']    = 'Действие';
 
 // Entry
 $_['entry_name']       = 'Cтатус заказа';
+$_['entry_comment']    = 'Комментарий';
 
 // Error
 $_['error_permission'] = 'У Вас нет прав для изменения статусов заказов!';

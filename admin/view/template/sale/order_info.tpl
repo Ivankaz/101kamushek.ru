@@ -239,9 +239,9 @@
                     <select name="order_status_id" id="input-order-status" class="form-control">
                       <?php foreach ($order_statuses as $order_statuses) { ?>
                       <?php if ($order_statuses['order_status_id'] == $order_status_id) { ?>
-                      <option value="<?php echo $order_statuses['order_status_id']; ?>" selected="selected"><?php echo $order_statuses['name']; ?></option>
+                      <option value="<?php echo $order_statuses['order_status_id']; ?>" data-comment="<?php echo $order_statuses['comment']; ?>" selected="selected"><?php echo $order_statuses['name']; ?></option>
                       <?php } else { ?>
-                      <option value="<?php echo $order_statuses['order_status_id']; ?>"><?php echo $order_statuses['name']; ?></option>
+                      <option value="<?php echo $order_statuses['order_status_id']; ?>" data-comment="<?php echo $order_statuses['comment']; ?>"><?php echo $order_statuses['name']; ?></option>
                       <?php } ?>
                       <?php } ?>
                     </select>
@@ -660,6 +660,15 @@ $(document).ready(function() {
 $('select[name="order_status_id"]').change(function(){
 	changeStatus();
 });
+
+// если изменили статус, обновляю комментарий к заказу
+$('#input-order-status').on("change", function(e) {
+    let comment = $(this).find('option:selected').data('comment');
+    if (comment != '') {
+        $('#input-comment').val(comment);
+    }
+});
+
 //--></script> 
 </div>
 <?php echo $footer; ?> 

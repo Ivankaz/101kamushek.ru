@@ -805,4 +805,17 @@ class ModelCheckoutOrder extends Model {
 			}
 		}
 	}
+
+    // возвращает комментарий к статусу заказа
+    public function getStatusComment($status_id = null) {
+        if ($status_id == null) return '';
+
+		$status_comment_query = $this->db->query("SELECT `comment` FROM `" . DB_PREFIX . "order_status` WHERE `order_status_id` = '" . (int)$status_id . "'");
+
+	    if ($status_comment_query->num_rows) {
+            return $status_comment_query->row['comment'];
+        } else {
+            return '';
+        }
+    }
 }

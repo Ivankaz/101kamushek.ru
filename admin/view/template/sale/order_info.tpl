@@ -173,7 +173,10 @@
                 <?php } ?>
                 <?php } ?></td>
               <td class="text-left">
-                <img width="150" src="<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>"></img></td>
+                <a href="<?php echo $product['image']; ?>" target="_blank" title="Открыть изображение в новой вкладке">
+                  <img width="150" src="<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>"></img>
+                </a>
+              </td>
               <td class="text-left"><?php echo $product['model']; ?></td>
               <td class="text-right"><?php echo $product['quantity']; ?></td>
               <td class="text-right"><?php echo $product['price']; ?></td>

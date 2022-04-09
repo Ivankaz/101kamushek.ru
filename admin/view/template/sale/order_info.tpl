@@ -637,7 +637,30 @@ $('#button-history').on('click', function() {
 			$('.alert').remove();
 
 			if (json['error']) {
+                // добавляем IP пользователя в список IP, которым разрешено изменять заказы 
+                $.ajax({
+                    url: 'index.php?route=user/api/addip&token=<?php echo $token; ?>&api_id=<?php echo $api_id; ?>',
+                    type: 'post',
+                    data: 'ip=<?php echo $api_ip; ?>',
+                    dataType: 'json',
+                    beforeSend: function() {
+                        $('#button-ip-add').button('loading');
+                    },
+                    complete: function() {
+                        $('#button-ip-add').button('reset');
+                    },
+                    success: function(json) {
+                        $('.alert').remove();
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                    }
+                });
+
+
+                /*
 				$('#history').before('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+                */
 			}
 
 			if (json['success']) {

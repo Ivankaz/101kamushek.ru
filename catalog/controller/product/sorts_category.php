@@ -103,4 +103,16 @@ if ($sort_date_added_DESC) {
 		'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.date_added&order=DESC' . $url)
 	);
 }
+
+$data['sorts'][] = array(
+    'text'  => $this->language->get('text_sku_asc'),
+    'value' => 'p.sku-ASC',
+    'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.sku&order=ASC' . $url)
+);
+
+$data['sorts'][] = array(
+    'text'  => $this->language->get('text_sku_desc'),
+    'value' => 'p.sku-DESC',
+    'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.sku&order=DESC' . $url)
+);
 ?>

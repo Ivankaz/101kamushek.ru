@@ -332,6 +332,60 @@
                     </label>
                   </div>
                 </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label"><?php echo $entry_product_sort_default; ?></label>
+                  <div class="col-sm-10">
+                    <select name="config_product_sort_default" id="input-product-sort-default" class="form-control">
+                      <?php
+                      $sorts = [
+                        'По умолчанию' => 'p.sort_order',
+                        'Название' => 'pd.name',
+                        'Цена' => 'p.price',
+                        'Рейтинг' => 'rating',
+                        'По дате поступления' => 'p.date_added',
+                        'Артикул' => 'p.sku',
+                      ];
+
+                      foreach ($sorts as $sortName => $sortValue) {
+                        if ($sortValue == $config_product_sort_default) {
+                        ?>
+                        <option value="<?php echo $sortValue; ?>" selected="selected"><?php echo $sortName; ?></option>
+                        <?php
+                        } else {
+                        ?>
+                        <option value="<?php echo $sortValue; ?>"><?php echo $sortName; ?></option>
+                        <?php
+                        }
+                      }
+                      ?>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label"><?php echo $entry_product_order_default; ?></label>
+                  <div class="col-sm-10">
+                    <select name="config_product_order_default" id="input-product-order-default" class="form-control">
+                      <?php
+                      $orders = [
+                        'По возрастанию' => 'ASC',
+                        'По убыванию' => 'DESC',
+                      ];
+
+                      foreach ($orders as $orderName => $orderValue) {
+                        if ($orderValue == $config_product_order_default) {
+                        ?>
+                        <option value="<?php echo $orderValue; ?>" selected="selected"><?php echo $orderName; ?></option>
+                        <?php
+                        } else {
+                        ?>
+                        <option value="<?php echo $orderValue; ?>"><?php echo $orderName; ?></option>
+                        <?php
+                        }
+                      }
+                      ?>
+                    </select>
+                  </div>
+                </div>
                 <div class="form-group required">
                   <label class="col-sm-2 control-label" for="input-admin-limit"><span data-toggle="tooltip" title="<?php echo $help_limit_admin; ?>"><?php echo $entry_limit_admin; ?></span></label>
                   <div class="col-sm-10">

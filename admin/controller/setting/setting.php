@@ -83,6 +83,8 @@ class ControllerSettingSetting extends Controller {
 		$data['entry_weight_class'] = $this->language->get('entry_weight_class');
 		$data['entry_limit_admin'] = $this->language->get('entry_limit_admin');
 		$data['entry_product_count'] = $this->language->get('entry_product_count');
+		$data['entry_product_sort_default'] = $this->language->get('entry_product_sort_default');
+		$data['entry_product_order_default'] = $this->language->get('entry_product_order_default');
 		$data['entry_review'] = $this->language->get('entry_review');
 		$data['entry_review_guest'] = $this->language->get('entry_review_guest');
 		$data['entry_voucher_min'] = $this->language->get('entry_voucher_min');
@@ -605,6 +607,18 @@ class ControllerSettingSetting extends Controller {
 			$data['config_product_count'] = $this->request->post['config_product_count'];
 		} else {
 			$data['config_product_count'] = $this->config->get('config_product_count');
+		}
+
+		if (isset($this->request->post['config_product_sort_default'])) {
+			$data['config_product_sort_default'] = $this->request->post['config_product_sort_default'];
+		} else {
+			$data['config_product_sort_default'] = $this->config->get('config_product_sort_default');
+		}
+
+        if (isset($this->request->post['config_product_order_default'])) {
+			$data['config_product_order_default'] = $this->request->post['config_product_order_default'];
+		} else {
+			$data['config_product_order_default'] = $this->config->get('config_product_order_default');
 		}
 
 		if (isset($this->request->post['config_review_status'])) {

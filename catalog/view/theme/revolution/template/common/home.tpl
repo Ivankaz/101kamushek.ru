@@ -110,12 +110,13 @@
 			<?php if ($aboutstore) { ?>
 			<?php if ($socv || $socfb || $socok || ($socvinsta && $right_insta)) {$aboutclass1="col-sm-12 col-md-8 col-lg-6 aboutstore";$aboutclass2="col-sm-12 col-md-8 col-lg-6";} else {$aboutclass1="";$aboutclass2="";} ?>
 			<div class="row">
-				<div class="col-sm-12 col-md-8 col-lg-6 aboutstore">
+				<div class="col-sm-12 col-md-12 col-lg-12 aboutstore">
 					<?php echo $aboutstore; ?>
 					<?php if (!$right_insta) { ?>
 					<?php echo $socvinsta; ?>
 					<?php } ?>
 				</div>
+				<!--
 				<div class="col-sm-12 col-md-8 col-lg-6">
 					<?php echo $socv; ?>
 					<?php echo $socfb; ?>
@@ -128,6 +129,7 @@
 						<?php echo $content_bottom; ?>
 					</div>
 				</div>
+				-->
 
 			</div>
 			<?php } ?>

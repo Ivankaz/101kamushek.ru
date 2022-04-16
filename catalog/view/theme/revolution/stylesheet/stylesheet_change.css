@@ -412,7 +412,7 @@ font-size: 12px;
     transform: translate(-0%, 50%);
     transition: 0.5s;
     position: absolute;
-    width: 380px;
+    width: auto;
 }
 .search .change_category_button {
     background: inherit;

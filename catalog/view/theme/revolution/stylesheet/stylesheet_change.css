@@ -638,7 +638,7 @@ width: 215px;
     z-index: 2;
 }
 
- 
+
 
 @media (min-width: 768px) {
 .container {
@@ -774,4 +774,7 @@ padding-top: 0px;
     margin: 0 15px 20px 15px !important;
     width: 45% !important;
 }
+}
+#menu .nav > li:last-child a {
+    margin: 0px !important;
 }

@@ -782,3 +782,15 @@ padding-top: 0px;
 #menu .nav > li:last-child a {
     margin: 0px !important;
 }
+
+/* Подкатегории на странице категории */
+.category__subcategories ul {
+  list-style: none;
+  padding: 0px;
+}
+
+@media (max-width: 1024px) {
+  .category__subcategories ul {
+    font-size: 12px;
+  }
+}

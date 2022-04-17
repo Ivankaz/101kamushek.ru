@@ -75,11 +75,23 @@
         </div>
       </div>
       <?php } else { ?>
-      <div class="row category__subcategories">
-        <?php foreach (array_chunk($categories, ceil(count($categories) / 4)) as $categories) { ?>
+      <div class="row category__subcategories category__subcategories_desktop">
+        <?php foreach (array_chunk($categories, ceil(count($categories) / 4)) as $categoriesForDesktop) { ?>
         <div class="col-sm-3">
           <ul>
-            <?php foreach ($categories as $category) { ?>
+            <?php foreach ($categoriesForDesktop as $category) { ?>
+            <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
+            <?php } ?>
+          </ul>
+        </div>
+        <?php } ?>
+      </div>
+
+      <div class="row category__subcategories category__subcategories_mobile">
+        <?php foreach (array_chunk($categories, ceil(count($categories) / 3)) as $categoriesForMobile) { ?>
+        <div class="col-xs-4">
+          <ul>
+            <?php foreach ($categoriesForMobile as $category) { ?>
             <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
             <?php } ?>
           </ul>

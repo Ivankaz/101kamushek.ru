@@ -789,8 +789,20 @@ padding-top: 0px;
   padding: 0px;
 }
 
+.category__subcategories_mobile {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .category__subcategories ul {
     font-size: 12px;
+  }
+
+  .category__subcategories_desktop {
+    display: none;
+  }
+
+  .category__subcategories_mobile {
+    display: block;
   }
 }

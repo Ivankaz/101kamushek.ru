@@ -152,7 +152,8 @@ class ControllerProductCategory extends Controller {
 
 			$data['categories'] = array();
 
-			$results = $this->model_catalog_category->getCategories($category_id);
+			$categoryId = $category_id;
+			$results = $this->model_catalog_category->getCategories($categoryId);
 
 			foreach ($results as $result) {
 				$filter_data = array(

@@ -8,7 +8,7 @@ class ControllerEventUpdateAmazonMenu extends Controller
     {
         $this->load->model('setting/setting');
 
-        $jsonAmazonMenu = $this->getJsonForAmazonMenu();
+        $jsonAmazonMenu = htmlspecialchars($this->getJsonForAmazonMenu());
         $this->model_setting_setting->editSettingValue('revtheme', 'revtheme_dop_menu', $jsonAmazonMenu);
     }
 

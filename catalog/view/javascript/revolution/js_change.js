@@ -207,7 +207,7 @@ $('#price-view').click(function() {
 	var win_shopcart = $(window).height();
 	var win_shopcart2 = $('#top').outerHeight()+$('#top2').outerHeight()+$('#top3').outerHeight();
 	//$('#cart .dropdown-menu > li').css('max-height', win_shopcart-win_shopcart2).css('overflow-y', 'auto');
-	$('#top3 #menu2 .child-box').css('max-height', 150).css('overflow-y', 'auto');
+	$('#top3 #menu2 .child-box').css('max-height', 230).css('overflow-y', 'auto');
 
 
 $(function() {

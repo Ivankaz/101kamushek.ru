@@ -387,7 +387,7 @@
                       <!--
                       $('.products_category .options_buy select.form-control option:nth-child(1)').attr('selected', 'selected');
                       $(document).ready(function() {
-                        get_product_option_id( < ? php echo $product['product_id']; ? > );
+                        get_product_option_id( <?php echo $product['product_id']; ?> );
                       });
 
                       function get_product_option_id(product_id) {
@@ -916,7 +916,7 @@
                         <!--
                         $('#product_products .options_buy select.form-control option:nth-child(1)').attr('selected', 'selected');
                         $(document).ready(function() {
-                          get_product_option_id_product_products( < ? php echo $product['product_id']; ? > );
+                          get_product_option_id_product_products( <?php echo $product['product_id']; ?> );
                         });
 
                         function get_product_option_id_product_products(product_id) {
@@ -1028,8 +1028,7 @@
                           </div>
                           <?php } ?>
                           <?php if ($option['type'] == 'text') { ?>
-                          <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?>:</label>
+                          <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">                           <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?>:</label>
                             <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['value']; ?>" placeholder="<?php echo $option['name']; ?>"
                               id="input-option<?php echo $option['product_option_id']; ?>" class="form-control" />
                           </div>
@@ -1229,53 +1228,33 @@
           <!--
           $('.product_related').owlCarousel({
             responsiveBaseWidth: '#product_products',
-            <
-            ?
-            php
+            <?php
             if ($chislo_ryad) {
-              ?
-              >
-              <
-              ?
-              php
+              ?>
+              <?php
               if ($setting_all_settings['mobil_two']) {
-                ?
-                >
+                ?>
                 itemsCustom: [
-                    [0, 1],
-                    [294, 2],
-                    [375, 2],
-                    [750, 3],
-                    [970, 4],
-                    [1170, 4]
-                  ], <
-                  ?
-                  php
+                  [0, 1],
+                  [294, 2],
+                  [375, 2],
+                  [750, 3],
+                  [970, 4],
+                  [1170, 4]
+                ], <?php
               } else {
-                ?
-                >
+                ?>
                 itemsCustom: [
                     [0, 1],
                     [375, 2],
                     [750, 3],
                     [970, 4],
                     [1170, 4]
-                  ], <
-                  ?
-                  php
-              } ? >
-              <
-              ?
-              php
-            } else {
-              ?
-              >
-              <
-              ?
-              php
-              if ($setting_all_settings['mobil_two']) {
-                ?
-                >
+                  ], <?php } ?>
+              <?php } else { ?>
+              <?php
+                            if ($setting_all_settings['mobil_two']) {
+                ?>
                 itemsCustom: [
                     [0, 1],
                     [294, 2],
@@ -1283,43 +1262,27 @@
                     [750, 3],
                     [970, 4],
                     [980, 5]
-                  ], <
-                  ?
-                  php
-              } else {
-                ?
-                >
+                  ], <?php } else { ?>
                 itemsCustom: [
                     [0, 1],
                     [375, 2],
                     [750, 3],
                     [970, 4],
                     [980, 5]
-                  ], <
-                  ?
-                  php
-              } ? >
-              <
-              ?
-              php
-            } ? >
+                  ], <?php } ?>
+              <?php } ?>
             mouseDrag : true,
             navigation : true,
             navigationText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
             pagination: true
           });
 
-          <
-          ?
-          php foreach($viewed_products as $product) {
+          <?php foreach($viewed_products as $product) {
               if ($product['minimum'] > 1 && $recalc_price) {
-                ?
-                >
-                update_quantity_product_products( < ? php echo $product['product_id']; ? > , < ? php echo $product['minimum']; ? > ); <
-                ?
-                php
+                ?>
+                update_quantity_product_products( <?php echo $product['product_id']; ?> , <?php echo $product['minimum']; ?> ); <?php
               }
-            } ? >
+            } ?>
             function get_revpopup_cart_quantity_product_products(product_id) {
               input_val = $('#product_products .product_' + product_id + ' .plus-minus').val();
               quantity = parseInt(input_val);
@@ -1332,12 +1295,9 @@
             maximumvalue = Number($('#product_products .pr_quantity_' + product_id).text());
             if (maximumvalue < 1) maximumvalue = 9999;
             input_val = $('#product_products .product_' + product_id + ' .plus-minus');
-            quantity = parseInt(input_val.val()); <
-            ?
-            php
+            quantity = parseInt(input_val.val()); <?php
             if ($q_zavisimost) {
-              ?
-              >
+              ?>
               if (znak == '+' && input_val.val() < maximumvalue) input_val.val(quantity + 1);
               else if (znak == '-' && input_val.val() > minimumvalue) input_val.val(quantity - 1);
               else if (znak == '=' && input_val.val() < maximumvalue && input_val.val() < maximumvalue) input_val.val(input_val.val());
@@ -1347,42 +1307,23 @@
               } else if (quantity > maximumvalue) {
                 input_val.val(maximumvalue);
                 val.value = maximumvalue;
-              } <
-              ?
-              php
-            } else {
-              ?
-              >
+              } <?php } else { ?>
               if (znak == '+') input_val.val(quantity + 1);
               else if (znak == '-' && input_val.val() > minimumvalue) input_val.val(quantity - 1);
               else if (znak == '=' && input_val.val() > minimumvalue) input_val.val(input_val.val());
               if (quantity < 1 || quantity < minimumvalue) {
                 input_val.val(minimumvalue);
                 val.value = minimumvalue;
-              } <
-              ?
-              php
-            } ? >
+              } <?php } ?>
             update_quantity_product_products(product_id, input_val.val());
           }
 
           function update_quantity_product_products(product_id, quantity) {
-            <
-            ?
-            php
+            <?php
             if ($recalc_price) {
-              ?
-              >
-              quantity = quantity; <
-              ?
-              php
-            } else {
-              ?
-              >
-              quantity = 1; <
-              ?
-              php
-            } ? >
+              ?>
+              quantity = quantity; <?php } else { ?>
+              quantity = 1; <?php } ?>
 
             data = $('#product_products .product_' + product_id + ' .options input[type=\'text\'], #product_products .product_' + product_id + ' .options input[type=\'hidden\'], #product_products .product_' + product_id +
               ' .options input[type=\'radio\']:checked, #product_products .product_' + product_id + ' .options input[type=\'checkbox\']:checked, #product_products .product_' + product_id + ' .options select');
@@ -1392,25 +1333,14 @@
               dataType: 'json',
               data: data.serialize() + '&product_id=' + product_id + '&quantity=' + quantity,
               success: function(json) {
-                <
-                ?
-                php
-                if ($recalc_price) {
-                  ?
-                  >
+                <?php if ($recalc_price) { ?>
 
-                  <
-                  ?
-                  php
-                  if ($description_options['zamena_description'] && $description_options['weight']) {
-                    ?
-                    >
-                    var weight = json['weight']; <
-                    ?
-                    php
+                  <?php
+                    if ($description_options['zamena_description'] && $description_options['weight']) {
+                    ?>
+                    var weight = json['weight']; <?php
                     if ($revtheme_product_all['recalc_price_animate']) {
-                      ?
-                      >
+                      ?>
                       var start_weight = parseFloat($('#product_products .pr_weight_' + product_id).attr('data-weight'));
                       $({
                         val: start_weight
@@ -1423,33 +1353,19 @@
                           $('#product_products .pr_weight_' + product_id).html(weight_format(val, product_id));
                         }
                       });
-                      $('#product_products .pr_weight_' + product_id).attr('data-weight', json['weight']); <
-                      ?
-                      php
+                      $('#product_products .pr_weight_' + product_id).attr('data-weight', json['weight']); <?php
                     } else {
-                      ?
-                      >
-                      $('#product_products .pr_weight_' + product_id).html(weight_format(weight, product_id)); <
-                      ?
-                      php
-                    } ? >
-                    <
-                    ?
-                    php
-                  } ? >
+                      ?>
+                      $('#product_products .pr_weight_' + product_id).html(weight_format(weight, product_id)); <?php
+                    } ?>
+                    <?php } ?>
 
-                  <
-                  ?
-                  php
+                  <?php
                   if ($stikers_status) {
-                    ?
-                    >
-                    var price = json['price_n']; <
-                    ?
-                    php
+                    ?>
+                    var price = json['price_n']; <?php
                     if ($revtheme_product_all['recalc_price_animate']) {
-                      ?
-                      >
+                      ?>
                       var start_price = parseFloat($('#product_products .special_no_format' + product_id).html().replace(/\s*/g, ''));
                       $({
                         val: start_price
@@ -1461,27 +1377,17 @@
                         step: function(val) {
                           $('#product_products .special_no_format' + product_id).html(price_format(price));
                         }
-                      }); <
-                      ?
-                      php
+                      }); <?php
                     } else {
-                      ?
-                      >
-                      $('#product_products .special_no_format' + product_id).html(price_format(price)); <
-                      ?
-                      php
-                    } ? >
-                    <
-                    ?
-                    php
-                  } ? >
+                      ?>
+                      $('#product_products .special_no_format' + product_id).html(price_format(price)); <?php
+                    } ?>
+                    <?php
+                  } ?>
 
-                  var special = json['special_n']; <
-                  ?
-                  php
+                  var special = json['special_n']; <?php
                   if ($revtheme_product_all['recalc_price_animate']) {
-                    ?
-                    >
+                    ?>
                     var start_special = parseFloat($('#product_products .price_no_format' + product_id).html().replace(/\s*/g, ''));
                     $({
                       val: start_special
@@ -1493,20 +1399,13 @@
                       step: function(val) {
                         $('#product_products .price_no_format' + product_id).html(price_format(val));
                       }
-                    }); <
-                    ?
-                    php
+                    }); <?php
                   } else {
-                    ?
-                    >
-                    $('#product_products .price_no_format' + product_id).html(price_format(special)); <
-                    ?
-                    php
-                  } ? >
-                  <
-                  ?
-                  php
-                } ? >
+                    ?>
+                    $('#product_products .price_no_format' + product_id).html(price_format(special)); <?php
+                  } ?>
+                  <?php
+                } ?>
               }
             });
           }
@@ -1516,22 +1415,14 @@
             if (input_val > minimumvalue) {
               input_val = minimumvalue;
               $('#product_products .product_' + product_id + ' .plus-minus').val(minimumvalue);
-            } <
-            ?
-            php
+            } <?php
             if ($recalc_price) {
-              ?
-              >
-              quantity = parseInt(input_val); <
-              ?
-              php
+              ?>
+              quantity = parseInt(input_val); <?php
             } else {
-              ?
-              >
-              quantity = 1; <
-              ?
-              php
-            } ? >
+              ?>
+              quantity = 1; <?php
+            } ?>
             data = $('#product_products .product_' + product_id + ' .options input[type=\'text\'], #product_products .product_' + product_id + ' .options input[type=\'hidden\'], #product_products .product_' + product_id +
               ' .options input[type=\'radio\']:checked, #product_products .product_' + product_id + ' .options input[type=\'checkbox\']:checked, #product_products .product_' + product_id + ' .options select');
             $.ajax({
@@ -1541,40 +1432,24 @@
               dataType: 'json',
               success: function(json) {
 
-                <
-                ?
-                php
+                <?php
                 if ($img_slider) {
-                  ?
-                  >
-                  $('#product_products .product_' + product_id + ' .image .owl-item:first-child img').attr('src', json['opt_image']); <
-                  ?
-                  php
+                  ?>
+                  $('#product_products .product_' + product_id + ' .image .owl-item:first-child img').attr('src', json['opt_image']); <?php
                 } else {
-                  ?
-                  >
-                  $('#product_products .product_' + product_id + ' .image img').attr('src', json['opt_image']); <
-                  ?
-                  php
-                } ? >
+                  ?>
+                  $('#product_products .product_' + product_id + ' .image img').attr('src', json['opt_image']); <?php
+                } ?>
 
-                <
-                ?
-                php
+                <?php
                 if ($description_options['zamena_description'] && $description_options['model']) {
-                  ?
-                  >
-                  $('#product_products .product_' + product_id + ' .pr_model_' + product_id).html(json['opt_model']); <
-                  ?
-                  php
-                } ? >
+                  ?>
+                  $('#product_products .product_' + product_id + ' .pr_model_' + product_id).html(json['opt_model']); <?php
+                } ?>
 
-                var end_quantity = json['option_quantity']; <
-                ?
-                php
+                var end_quantity = json['option_quantity']; <?php
                 if ($revtheme_product_all['recalc_price_animate']) {
-                  ?
-                  >
+                  ?>
                   var start_quantity = parseFloat($('#product_products .pr_quantity_' + product_id).html().replace(/\s*/g, ''));
                   $({
                     val: start_quantity
@@ -1586,29 +1461,18 @@
                     step: function(val) {
                       $('#product_products .pr_quantity_' + product_id).html(number_format(val, product_id));
                     }
-                  }); <
-                  ?
-                  php
+                  }); <?php
                 } else {
-                  ?
-                  >
-                  $('#product_products .pr_quantity_' + product_id).html(number_format(end_quantity, product_id)); <
-                  ?
-                  php
-                } ? >
+                  ?>
+                  $('#product_products .pr_quantity_' + product_id).html(number_format(end_quantity, product_id)); <?php
+                } ?>
 
-                <
-                ?
-                php
+                <?php
                 if ($description_options['zamena_description'] && $description_options['weight']) {
-                  ?
-                  >
-                  var weight = json['weight']; <
-                  ?
-                  php
+                  ?>
+                  var weight = json['weight']; <?php
                   if ($revtheme_product_all['recalc_price_animate']) {
-                    ?
-                    >
+                    ?>
                     var start_weight = parseFloat($('#product_products .pr_weight_' + product_id).attr('data-weight'));
                     $({
                       val: start_weight
@@ -1621,33 +1485,20 @@
                         $('#product_products .pr_weight_' + product_id).html(weight_format(val, product_id));
                       }
                     });
-                    $('#product_products .pr_weight_' + product_id).attr('data-weight', json['weight']); <
-                    ?
-                    php
+                    $('#product_products .pr_weight_' + product_id).attr('data-weight', json['weight']); <?php
                   } else {
-                    ?
-                    >
-                    $('#product_products .pr_weight_' + product_id).html(weight_format(weight, product_id)); <
-                    ?
-                    php
-                  } ? >
-                  <
-                  ?
-                  php
-                } ? >
+                    ?>
+                    $('#product_products .pr_weight_' + product_id).html(weight_format(weight, product_id)); <?php
+                  } ?>
+                  <?php
+                } ?>
 
-                <
-                ?
-                php
+                <?php
                 if ($stikers_status) {
-                  ?
-                  >
-                  var price = json['price_n']; <
-                  ?
-                  php
+                  ?>
+                  var price = json['price_n']; <?php
                   if ($revtheme_product_all['recalc_price_animate']) {
-                    ?
-                    >
+                    ?>
                     var start_price = parseFloat($('#product_products .special_no_format' + product_id).html().replace(/\s*/g, ''));
                     $({
                       val: start_price
@@ -1659,28 +1510,18 @@
                       step: function(val) {
                         $('#product_products .special_no_format' + product_id).html(price_format(val));
                       }
-                    }); <
-                    ?
-                    php
+                    }); <?php
                   } else {
-                    ?
-                    >
-                    $('#product_products .special_no_format' + product_id).html(price_format(price)); <
-                    ?
-                    php
-                  } ? >
-                  <
-                  ?
-                  php
-                } ? >
+                    ?>
+                    $('#product_products .special_no_format' + product_id).html(price_format(price)); <?php
+                  } ?>
+                  <?php
+                } ?>
 
 
-                var special = json['special_n']; <
-                ?
-                php
+                var special = json['special_n']; <?php
                 if ($revtheme_product_all['recalc_price_animate']) {
-                  ?
-                  >
+                  ?>
                   var start_special = parseFloat($('#product_products .price_no_format' + product_id).html().replace(/\s*/g, ''));
                   $({
                     val: start_special
@@ -1692,16 +1533,11 @@
                     step: function(val) {
                       $('#product_products .price_no_format' + product_id).html(price_format(val));
                     }
-                  }); <
-                  ?
-                  php
+                  }); <?php
                 } else {
-                  ?
-                  >
-                  $('#product_products .price_no_format' + product_id).html(price_format(special)); <
-                  ?
-                  php
-                } ? >
+                  ?>
+                  $('#product_products .price_no_format' + product_id).html(price_format(special)); <?php
+                } ?>
 
               }
             });
@@ -1729,24 +1565,16 @@
   </div>
   <script>
     <!--
-    < ? php foreach($products as $brand => $items) {
-        ?
-        >
-        <
-        ?
-        php foreach($items['products'] as $product) {
+    <?php foreach($products as $brand => $items) {
+        ?>
+        <?php foreach($items['products'] as $product) {
             if ($product['minimum'] > 1 && $recalc_price) {
-              ?
-              >
-              update_quantity( < ? php echo $product['product_id']; ? > , < ? php echo $product['minimum']; ? > ); <
-              ?
-              php
+              ?>
+              update_quantity( <?php echo $product['product_id']; ?> , <?php echo $product['minimum']; ?> ); <?php
             }
-          } ? >
-          <
-          ?
-          php
-      } ? >
+          } ?>
+          <?php
+      } ?>
       function get_revpopup_cart_quantity(product_id) {
         input_val = $('.products_category .product_' + product_id + ' .plus-minus').val();
         quantity = parseInt(input_val);
@@ -1759,12 +1587,9 @@
       maximumvalue = Number($('.products_category .pr_quantity_' + product_id).text());
       if (maximumvalue < 1) maximumvalue = 9999;
       input_val = $('.products_category .product_' + product_id + ' .plus-minus');
-      quantity = parseInt(input_val.val()); <
-      ?
-      php
+      quantity = parseInt(input_val.val()); <?php
       if ($q_zavisimost) {
-        ?
-        >
+        ?>
         if (znak == '+' && input_val.val() < maximumvalue) input_val.val(quantity + 1);
         else if (znak == '-' && input_val.val() > minimumvalue) input_val.val(quantity - 1);
         else if (znak == '=' && input_val.val() < maximumvalue && input_val.val() < maximumvalue) input_val.val(input_val.val());
@@ -1774,42 +1599,29 @@
         } else if (quantity > maximumvalue) {
           input_val.val(maximumvalue);
           val.value = maximumvalue;
-        } <
-        ?
-        php
+        } <?php
       } else {
-        ?
-        >
+        ?>
         if (znak == '+') input_val.val(quantity + 1);
         else if (znak == '-' && input_val.val() > minimumvalue) input_val.val(quantity - 1);
         else if (znak == '=' && input_val.val() > minimumvalue) input_val.val(input_val.val());
         if (quantity < 1 || quantity < minimumvalue) {
           input_val.val(minimumvalue);
           val.value = minimumvalue;
-        } <
-        ?
-        php
-      } ? >
+        } <?php
+      } ?>
       update_quantity(product_id, input_val.val());
     }
 
     function update_quantity(product_id, quantity) {
-      <
-      ?
-      php
+      <?php
       if ($recalc_price) {
-        ?
-        >
-        quantity = quantity; <
-        ?
-        php
+        ?>
+        quantity = quantity; <?php
       } else {
-        ?
-        >
-        quantity = 1; <
-        ?
-        php
-      } ? >
+        ?>
+        quantity = 1; <?php
+      } ?>
 
       data = $('.products_category .product_' + product_id + ' .options input[type=\'text\'], .products_category .product_' + product_id + ' .options input[type=\'hidden\'], .products_category .product_' + product_id +
         ' .options input[type=\'radio\']:checked, .products_category .product_' + product_id + ' .options input[type=\'checkbox\']:checked, .products_category .product_' + product_id + ' .options select');
@@ -1819,25 +1631,16 @@
         dataType: 'json',
         data: data.serialize() + '&product_id=' + product_id + '&quantity=' + quantity,
         success: function(json) {
-          <
-          ?
-          php
+          <?php
           if ($recalc_price) {
-            ?
-            >
+            ?>
 
-            <
-            ?
-            php
+            <?php
             if ($description_options['zamena_description'] && $description_options['weight']) {
-              ?
-              >
-              var weight = json['weight']; <
-              ?
-              php
+              ?>
+              var weight = json['weight']; <?php
               if ($revtheme_product_all['recalc_price_animate']) {
-                ?
-                >
+                ?>
                 var start_weight = parseFloat($('.products_category .pr_weight_' + product_id).attr('data-weight'));
                 $({
                   val: start_weight
@@ -1850,33 +1653,20 @@
                     $('.products_category .pr_weight_' + product_id).html(weight_format(val, product_id));
                   }
                 });
-                $('.products_category .pr_weight_' + product_id).attr('data-weight', json['weight']); <
-                ?
-                php
+                $('.products_category .pr_weight_' + product_id).attr('data-weight', json['weight']); <?php
               } else {
-                ?
-                >
-                $('.products_category .pr_weight_' + product_id).html(weight_format(weight, product_id)); <
-                ?
-                php
-              } ? >
-              <
-              ?
-              php
-            } ? >
+                ?>
+                $('.products_category .pr_weight_' + product_id).html(weight_format(weight, product_id)); <?php
+              } ?>
+              <?php
+            } ?>
 
-            <
-            ?
-            php
+            <?php
             if ($stikers_status) {
-              ?
-              >
-              var price = json['price_n']; <
-              ?
-              php
+              ?>
+              var price = json['price_n']; <?php
               if ($revtheme_product_all['recalc_price_animate']) {
-                ?
-                >
+                ?>
                 var start_price = parseFloat($('.products_category .special_no_format' + product_id).html().replace(/\s*/g, ''));
                 $({
                   val: start_price
@@ -1888,28 +1678,18 @@
                   step: function(val) {
                     $('.products_category .special_no_format' + product_id).html(price_format(val));
                   }
-                }); <
-                ?
-                php
+                }); <?php
               } else {
-                ?
-                >
-                $('.products_category .special_no_format' + product_id).html(price_format(price)); <
-                ?
-                php
-              } ? >
-              <
-              ?
-              php
-            } ? >
+                ?>
+                $('.products_category .special_no_format' + product_id).html(price_format(price)); <?php
+              } ?>
+              <?php
+            } ?>
 
 
-            var special = json['special_n']; <
-            ?
-            php
+            var special = json['special_n']; <?php
             if ($revtheme_product_all['recalc_price_animate']) {
-              ?
-              >
+              ?>
               var start_special = parseFloat($('.products_category .price_no_format' + product_id).html().replace(/\s*/g, ''));
               $({
                 val: start_special
@@ -1921,20 +1701,13 @@
                 step: function(val) {
                   $('.products_category .price_no_format' + product_id).html(price_format(val));
                 }
-              }); <
-              ?
-              php
+              }); <?php
             } else {
-              ?
-              >
-              $('.products_category .price_no_format' + product_id).html(price_format(special)); <
-              ?
-              php
-            } ? >
-            <
-            ?
-            php
-          } ? >
+              ?>
+              $('.products_category .price_no_format' + product_id).html(price_format(special)); <?php
+            } ?>
+            <?php
+          } ?>
         }
       });
     }
@@ -1944,22 +1717,14 @@
       if (input_val > minimumvalue) {
         input_val = minimumvalue;
         $('.products_category .product_' + product_id + ' .plus-minus').val(minimumvalue);
-      } <
-      ?
-      php
+      } <?php
       if ($recalc_price) {
-        ?
-        >
-        quantity = parseInt(input_val); <
-        ?
-        php
+        ?>
+        quantity = parseInt(input_val); <?php
       } else {
-        ?
-        >
-        quantity = 1; <
-        ?
-        php
-      } ? >
+        ?>
+        quantity = 1; <?php
+      } ?>
       data = $('.products_category .product_' + product_id + ' .options input[type=\'text\'], .products_category .product_' + product_id + ' .options input[type=\'hidden\'], .products_category .product_' + product_id +
         ' .options input[type=\'radio\']:checked, .products_category .product_' + product_id + ' .options input[type=\'checkbox\']:checked, .products_category .product_' + product_id + ' .options select');
       $.ajax({
@@ -1969,40 +1734,24 @@
         dataType: 'json',
         success: function(json) {
 
-          <
-          ?
-          php
+          <?php
           if ($img_slider) {
-            ?
-            >
-            $('.products_category .product_' + product_id + ' .image .owl-item:first-child img').attr('src', json['opt_image']); <
-            ?
-            php
+            ?>
+            $('.products_category .product_' + product_id + ' .image .owl-item:first-child img').attr('src', json['opt_image']); <?php
           } else {
-            ?
-            >
-            $('.products_category .product_' + product_id + ' .image img').attr('src', json['opt_image']); <
-            ?
-            php
-          } ? >
+            ?>
+            $('.products_category .product_' + product_id + ' .image img').attr('src', json['opt_image']); <?php
+          } ?>
 
-          <
-          ?
-          php
+          <?php
           if ($description_options['zamena_description'] && $description_options['model']) {
-            ?
-            >
-            $('.products_category .product_' + product_id + ' .pr_model_' + product_id).html(json['opt_model']); <
-            ?
-            php
-          } ? >
+            ?>
+            $('.products_category .product_' + product_id + ' .pr_model_' + product_id).html(json['opt_model']); <?php
+          } ?>
 
-          var end_quantity = json['option_quantity']; <
-          ?
-          php
+          var end_quantity = json['option_quantity']; <?php
           if ($revtheme_product_all['recalc_price_animate']) {
-            ?
-            >
+            ?>
             var start_quantity = parseFloat($('.products_category .pr_quantity_' + product_id).html().replace(/\s*/g, ''));
             $({
               val: start_quantity
@@ -2014,29 +1763,18 @@
               step: function(val) {
                 $('.products_category .pr_quantity_' + product_id).html(number_format(val, product_id));
               }
-            }); <
-            ?
-            php
+            }); <?php
           } else {
-            ?
-            >
-            $('.products_category .pr_quantity_' + product_id).html(number_format(end_quantity, product_id)); <
-            ?
-            php
-          } ? >
+            ?>
+            $('.products_category .pr_quantity_' + product_id).html(number_format(end_quantity, product_id)); <?php
+          } ?>
 
-          <
-          ?
-          php
+          <?php
           if ($description_options['zamena_description'] && $description_options['weight']) {
-            ?
-            >
-            var weight = json['weight']; <
-            ?
-            php
+            ?>
+            var weight = json['weight']; <?php
             if ($revtheme_product_all['recalc_price_animate']) {
-              ?
-              >
+              ?>
               var start_weight = parseFloat($('.products_category .pr_weight_' + product_id).attr('data-weight'));
               $({
                 val: start_weight
@@ -2049,33 +1787,20 @@
                   $('.products_category .pr_weight_' + product_id).html(weight_format(val, product_id));
                 }
               });
-              $('.products_category .pr_weight_' + product_id).attr('data-weight', json['weight']); <
-              ?
-              php
+              $('.products_category .pr_weight_' + product_id).attr('data-weight', json['weight']); <?php
             } else {
-              ?
-              >
-              $('.products_category .pr_weight_' + product_id).html(weight_format(weight, product_id)); <
-              ?
-              php
-            } ? >
-            <
-            ?
-            php
-          } ? >
+              ?>
+              $('.products_category .pr_weight_' + product_id).html(weight_format(weight, product_id)); <?php
+            } ?>
+            <?php
+          } ?>
 
-          <
-          ?
-          php
+          <?php
           if ($stikers_status) {
-            ?
-            >
-            var price = json['price_n']; <
-            ?
-            php
+            ?>
+            var price = json['price_n']; <?php
             if ($revtheme_product_all['recalc_price_animate']) {
-              ?
-              >
+              ?>
               var start_price = parseFloat($('.products_category .special_no_format' + product_id).html().replace(/\s*/g, ''));
               $({
                 val: start_price
@@ -2087,27 +1812,17 @@
                 step: function(val) {
                   $('.products_category .special_no_format' + product_id).html(price_format(val));
                 }
-              }); <
-              ?
-              php
+              }); <?php
             } else {
-              ?
-              >
-              $('.products_category .special_no_format' + product_id).html(price_format(price)); <
-              ?
-              php
-            } ? >
-            <
-            ?
-            php
-          } ? >
+              ?>
+              $('.products_category .special_no_format' + product_id).html(price_format(price)); <?php
+            } ?>
+            <?php
+          } ?>
 
-          var special = json['special_n']; <
-          ?
-          php
+          var special = json['special_n']; <?php
           if ($revtheme_product_all['recalc_price_animate']) {
-            ?
-            >
+            ?>
             var start_special = parseFloat($('.products_category .price_no_format' + product_id).html().replace(/\s*/g, ''));
             $({
               val: start_special
@@ -2119,31 +1834,22 @@
               step: function(val) {
                 $('.products_category .price_no_format' + product_id).html(price_format(val));
               }
-            }); <
-            ?
-            php
+            }); <?php
           } else {
-            ?
-            >
-            $('.products_category .price_no_format' + product_id).html(price_format(special)); <
-            ?
-            php
-          } ? >
+            ?>
+            $('.products_category .price_no_format' + product_id).html(price_format(special)); <?php
+          } ?>
         }
       });
     }
 
     function price_format(n) {
-      c = < ? php echo(empty($currency['decimals']) ? "0" : $currency['decimals']); ? > ;
-      d = '<?php echo $currency['
-      decimal_point ']; ?>';
-      t = '<?php echo $currency['
-      thousand_point ']; ?>';
-      s_left = '<?php echo $currency['
-      symbol_left ']; ?>';
-      s_right = '<?php echo $currency['
-      symbol_right ']; ?>';
-      n = n * < ? php echo $currency['value']; ? > ;
+      c = <?php echo(empty($currency['decimals']) ? "0" : $currency['decimals']); ?> ;
+      d = '<?php echo $currency['decimal_point']; ?>';
+      t = '<?php echo $currency['thousand_point']; ?>';
+      s_left = '<?php echo $currency['symbol_left']; ?>';
+      s_right = '<?php echo $currency['symbol_right']; ?>';
+      n = n * <?php echo $currency['value']; ?>;
       i = parseInt(n = Math.abs(n).toFixed(c)) + '';
       j = ((j = i.length) > 3) ? j % 3 : 0;
       return s_left + (j ? i.substr(0, j) + t : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : '') + s_right;

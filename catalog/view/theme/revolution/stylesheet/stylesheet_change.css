@@ -412,7 +412,7 @@ font-size: 12px;
     transform: translate(-0%, 50%);
     transition: 0.5s;
     position: absolute;
-    width: auto;
+    width: 380px;
 }
 .search .change_category_button {
     background: inherit;
@@ -638,7 +638,7 @@ width: 215px;
     z-index: 2;
 }
 
-
+ 
 
 @media (min-width: 768px) {
 .container {
@@ -696,12 +696,8 @@ padding-top: 0px;
 .catalog-menu {
     display: none;
 }
-.owl-item {
-  min-height: 90px;
-  margin-bottom: 20px;
-}
 .owl-item h2 {
-    margin-top: -70px;
+    margin-top: -80px;
     margin-bottom: 0px;
     font-size: 25px;
     font-weight: 600;
@@ -778,31 +774,4 @@ padding-top: 0px;
     margin: 0 15px 20px 15px !important;
     width: 45% !important;
 }
-}
-#menu .nav > li:last-child a {
-    margin: 0px !important;
-}
-
-/* Подкатегории на странице категории */
-.category__subcategories ul {
-  list-style: none;
-  padding: 0px;
-}
-
-.category__subcategories_mobile {
-  display: none;
-}
-
-@media (max-width: 1024px) {
-  .category__subcategories ul {
-    font-size: 12px;
-  }
-
-  .category__subcategories_desktop {
-    display: none;
-  }
-
-  .category__subcategories_mobile {
-    display: block;
-  }
 }

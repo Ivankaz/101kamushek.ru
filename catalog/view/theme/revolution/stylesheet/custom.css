@@ -264,6 +264,25 @@
 
 .search {
   width: auto;
+  min-width: 320px;
+}
+
+.search .content {
+  margin-left: 0;
+  padding-top: unset;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.top-links img {
+  min-width: 50px;
+  max-width: 50px;
+}
+
+.search .content .name {
+  font-size: 14px;
 }
 
 #menu .nav>li:last-child a {

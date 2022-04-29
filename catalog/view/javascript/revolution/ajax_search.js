@@ -23,10 +23,10 @@ var ajaxSearch = $('header .search input[name=\'search\']');
 						}
 						html += '<div class="content">';
 						if(!item.image && item.reviews !== 'man'){
-							html += '<div style="float:right; color: #bbb;">Категория</div>';
+							html += '<div style="float:right; color: #bbb; order: 1;">Категория</div>';
 						}
 						if(item.reviews == 'man'){
-							html += '<div style="float:right; color: #bbb;">Производитель</div>';
+							html += '<div style="float:right; color: #bbb; order: 1;">Производитель</div>';
 						}
 						html += '<div class="name">'+item.label+'</div>';
 						if(item.price){
@@ -85,7 +85,7 @@ var ajaxSearch = $('header .search input[name=\'search\']');
 					if(ui.reviews == 'man'){
 						location = 'index.php?route=product/manufacturer&manufacturer_id='+ui.value;
 					} else {
-						location = 'index.php?route=product/category&category_id='+ui.value;
+						location = 'index.php?route=product/category&path=0_'+ui.value;
 					}
 				}
 			}else{

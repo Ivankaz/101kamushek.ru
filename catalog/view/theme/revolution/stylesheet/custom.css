@@ -273,7 +273,7 @@
   padding-left: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 .top-links img {
@@ -282,7 +282,12 @@
 }
 
 .search .content .name {
-  font-size: 14px;
+  font-size: 10px;
+}
+
+.search ul.dropdown-menu {
+  display: flex;
+  flex-direction: column;
 }
 
 #menu .nav>li:last-child a {

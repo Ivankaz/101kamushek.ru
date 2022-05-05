@@ -727,12 +727,13 @@ function get_revpopup_cart( product_id, action, quantity, block_id ) {
 						'; } $js[] = '
 						$(tmp_img)
 							.clone()
-							.css({width : $(\'.product-price .image\').outerWidth(), \'position\' : \'absolute\', \'z-index\' : \'999\', top: $(\'.products_category .product_\'+product_id+\' .image img\').offset().top, left: $(\'.products_category .product_\'+product_id+\' .image img\').offset().left})
+							.css({width : $(\'.product-price .image\').outerWidth(), \'position\' : \'absolute\', \'z-index\' : \'999\', top: $(\'.products_category .product_\'+product_id+\' .image img\').offset().top, left: $(\'.products_category .product_\'+product_id+\' .image img\').offset().left, width: $(tmp_img).width(), height: $(tmp_img).height()})
 							.appendTo("body")
 							.animate({opacity: 0.3,
 								left: $(header_cart_element).offset()[\'left\'],
 								top: $(header_cart_element).offset()[\'top\']+15,
-								width: 10}, 800, function() {
+								width: $(header_cart_element).height(),
+								height: $(header_cart_element).height()}, 800, function() {
 								$(this).remove();
 							});
 					'; } $js[] = '
@@ -819,12 +820,13 @@ function get_revpopup_cart( product_id, action, quantity, block_id ) {
 						tmp_img = $(\'.products_category .product_\'+product_id+\' .image img\');
 						$(tmp_img)
 							.clone()
-							.css({width : $(\'.products_category .product_\'+product_id+\' .image img\').outerWidth(), \'position\' : \'absolute\', \'z-index\' : \'999\', top: $(\'.products_category .product_\'+product_id+\' .image img\').offset().top, left: $(\'.products_category .product_\'+product_id+\' .image img\').offset().left})
+							.css({width : $(\'.products_category .product_\'+product_id+\' .image img\').outerWidth(), \'position\' : \'absolute\', \'z-index\' : \'999\', top: $(\'.products_category .product_\'+product_id+\' .image img\').offset().top, left: $(\'.products_category .product_\'+product_id+\' .image img\').offset().left, width: $(tmp_img).width(), height: $(tmp_img).height()})
 							.appendTo("body")
 							.animate({opacity: 0.3,
 								left: $(header_cart_element).offset()[\'left\'],
 								top: $(header_cart_element).offset()[\'top\']+15,
-								width: 10}, 800, function() {
+								width: $(header_cart_element).height(),
+								height: $(header_cart_element).height()}, 800, function() {
 								$(this).remove();
 							});
 					'; } $js[] = '
@@ -928,12 +930,13 @@ function get_revpopup_cart( product_id, action, quantity, block_id ) {
 						tmp_img = $(\'.main-image img\')
 						$(tmp_img)
 							.clone()
-							.css({\'position\' : \'absolute\', \'z-index\' : \'999\', top: $(\'.main-image img\').offset().top, left: $(\'.main-image img\').offset().left})
+							.css({\'position\' : \'absolute\', \'z-index\' : \'999\', top: $(\'.main-image img\').offset().top, left: $(\'.main-image img\').offset().left, width: $(tmp_img).width(), height: $(tmp_img).height()})
 							.appendTo("body")
 							.animate({opacity: 0.3,
 								left: $(header_cart_element).offset()[\'left\'],
 								top: $(header_cart_element).offset()[\'top\']+15,
-								width: 10}, 800, function() {
+								width: $(header_cart_element).height(),
+								height: $(header_cart_element).height()}, 800, function() {
 								$(this).remove();
 							});
 					'; } $js[] = '
@@ -1167,12 +1170,13 @@ function get_revpopup_cart( product_id, action, quantity, block_id ) {
 						'; } $js[] = '
 						$(tmp_img)
 							.clone()
-							.css({\'position\' : \'absolute\', \'z-index\' : \'999\', top: $(\'#\'+block_id+\' .product_\'+product_id+\' .image img\').offset().top, left: $(\'#\'+block_id+\' .product_\'+product_id+\' .image img\').offset().left})
+							.css({\'position\' : \'absolute\', \'z-index\' : \'999\', top: $(\'#\'+block_id+\' .product_\'+product_id+\' .image img\').offset().top, left: $(\'#\'+block_id+\' .product_\'+product_id+\' .image img\').offset().left, width: $(tmp_img).width(), height: $(tmp_img).height()})
 							.appendTo("body")
 							.animate({opacity: 0.3,
 								left: $(header_cart_element).offset()[\'left\'],
 								top: $(header_cart_element).offset()[\'top\']+15,
-								width: 10}, 800, function() {
+								width: $(header_cart_element).height(),
+								height: $(header_cart_element).height()}, 800, function() {
 								$(this).remove();
 							});
 					'; } $js[] = '
@@ -1291,12 +1295,13 @@ function get_revpopup_cart( product_id, action, quantity, block_id ) {
 						'; } $js[] = '
 						$(tmp_img)
 							.clone()
-							.css({\'position\' : \'absolute\', \'z-index\' : \'999\', top: $(\'#\'+block_id+\' .product_\'+product_id+\' .image img\').offset().top, left: $(\'#\'+block_id+\' .product_\'+product_id+\' .image img\').offset().left})
+							.css({\'position\' : \'absolute\', \'z-index\' : \'999\', top: $(\'#\'+block_id+\' .product_\'+product_id+\' .image img\').offset().top, left: $(\'#\'+block_id+\' .product_\'+product_id+\' .image img\').offset().left, width: $(tmp_img).width(), height: $(tmp_img).height()})
 							.appendTo("body")
 							.animate({opacity: 0.3,
 								left: $(header_cart_element).offset()[\'left\'],
 								top: $(header_cart_element).offset()[\'top\']+15,
-								width: 10}, 800, function() {
+								width: $(header_cart_element).height(),
+								height: $(header_cart_element).height()}, 800, function() {
 								$(this).remove();
 							});
 					'; } $js[] = '
@@ -1395,12 +1400,13 @@ function get_revpopup_cart_option (opt_id, option, quantity, product_id) {
 					tmp_img = $(\'.main-image img\')
 					$(tmp_img)
 						.clone()
-						.css({\'position\' : \'absolute\', \'z-index\' : \'999\', top: $(\'.main-image img\').offset().top, left: $(\'.main-image img\').offset().left})
+						.css({\'position\' : \'absolute\', \'z-index\' : \'999\', top: $(\'.main-image img\').offset().top, left: $(\'.main-image img\').offset().left, width: $(tmp_img).width(), height: $(tmp_img).height()})
 						.appendTo("body")
 						.animate({opacity: 0.3,
 							left: $(header_cart_element).offset()[\'left\'],
 							top: $(header_cart_element).offset()[\'top\']+15,
-							width: 10}, 800, function() {
+							width: $(header_cart_element).height(),
+							height: $(header_cart_element).height()}, 800, function() {
 							$(this).remove();
 						});
 				'; } $js[] = '

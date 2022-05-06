@@ -713,14 +713,14 @@ function get_revpopup_cart( product_id, action, quantity, block_id ) {
 								header_cart_element = "#top #cart-total_mobi";
 							} else {
 								'; if ($revtheme_header_cart['cart_position']) { $js[] = '
-									header_cart_element = "#top2 #cart";
+									header_cart_element = "#top #cart-total_mobi";
 								'; } else { $js[] = '
 									header_cart_element = "#top3 #cart";
 								'; } $js[] = '
 							}
 						'; } else { $js[] = '
 							'; if ($revtheme_header_cart['cart_position']) { $js[] = '
-								header_cart_element = "#top2 #cart";
+								header_cart_element = "#top #cart-total_mobi";
 							'; } else { $js[] = '
 								header_cart_element = "#top3 #cart";
 							'; } $js[] = '
@@ -739,7 +739,7 @@ function get_revpopup_cart( product_id, action, quantity, block_id ) {
 					'; } $js[] = '
 					$(\'#top #cart-total_mobi\').html(json[\'total\']);
 					$(\'#top3 #cart-total\').html(json[\'total\']);
-					$(\'#top2 #cart-total\').html(json[\'total\']);
+					$(\'#top #cart-total_mobi-total\').html(json[\'total\']);
 					$(\'#top3 #cart-total-popup\').html(json[\'total\']);
 					$(\'#cart > ul\').load(\'index.php?route=common/cart/info ul li\');
 					'; if ($setting_catalog_all['product_in_cart']) { $js[] = '
@@ -805,14 +805,14 @@ function get_revpopup_cart( product_id, action, quantity, block_id ) {
 								header_cart_element = "#top #cart-total_mobi";
 							} else {
 								'; if ($revtheme_header_cart['cart_position']) { $js[] = '
-									header_cart_element = "#top2 #cart";
+									header_cart_element = "#top #cart-total_mobi";
 								'; } else { $js[] = '
 									header_cart_element = "#top3 #cart";
 								'; } $js[] = '
 							}
 						'; } else { $js[] = '
 							'; if ($revtheme_header_cart['cart_position']) { $js[] = '
-								header_cart_element = "#top2 #cart";
+								header_cart_element = "#top #cart-total_mobi";
 							'; } else { $js[] = '
 								header_cart_element = "#top3 #cart";
 							'; } $js[] = '
@@ -832,7 +832,7 @@ function get_revpopup_cart( product_id, action, quantity, block_id ) {
 					'; } $js[] = '
 					$(\'#top #cart-total_mobi\').html(json[\'total\']);
 					$(\'#top3 #cart-total\').html(json[\'total\']);
-					$(\'#top2 #cart-total\').html(json[\'total\']);
+					$(\'#top #cart-total_mobi-total\').html(json[\'total\']);
 					$(\'#top3 #cart-total-popup\').html(json[\'total\']);
 					$(\'#cart > ul\').load(\'index.php?route=common/cart/info ul li\');
 					'; if ($setting_catalog_all['product_in_cart']) { $js[] = '
@@ -915,14 +915,14 @@ function get_revpopup_cart( product_id, action, quantity, block_id ) {
 								header_cart_element = "#top #cart-total_mobi";
 							} else {
 								'; if ($revtheme_header_cart['cart_position']) { $js[] = '
-									header_cart_element = "#top2 #cart";
+									header_cart_element = "#top #cart-total_mobi";
 								'; } else { $js[] = '
 									header_cart_element = "#top3 #cart";
 								'; } $js[] = '
 							}
 						'; } else { $js[] = '
 							'; if ($revtheme_header_cart['cart_position']) { $js[] = '
-								header_cart_element = "#top2 #cart";
+								header_cart_element = "#top #cart-total_mobi";
 							'; } else { $js[] = '
 								header_cart_element = "#top3 #cart";
 							'; } $js[] = '
@@ -942,7 +942,7 @@ function get_revpopup_cart( product_id, action, quantity, block_id ) {
 					'; } $js[] = '
 					$(\'#top #cart-total_mobi\').html(json[\'total\']);
 					$(\'#top3 #cart-total\').html(json[\'total\']);
-					$(\'#top2 #cart-total\').html(json[\'total\']);
+					$(\'#top #cart-total_mobi-total\').html(json[\'total\']);
 					$(\'#top3 #cart-total-popup\').html(json[\'total\']);
 					$(\'#cart > ul\').load(\'index.php?route=common/cart/info ul li\');
 					'; if ($setting_catalog_all['product_in_cart']) { $js[] = '
@@ -1027,7 +1027,7 @@ function get_revpopup_cart( product_id, action, quantity, block_id ) {
 					'; } $js[] = '
 					$(\'#top #cart-total_mobi\').html(json[\'total\']);
 					$(\'#top3 #cart-total\').html(json[\'total\']);
-					$(\'#top2 #cart-total\').html(json[\'total\']);
+					$(\'#top #cart-total_mobi-total\').html(json[\'total\']);
 					$(\'#top3 #cart-total-popup\').html(json[\'total\']);
 					$(\'#cart > ul\').load(\'index.php?route=common/cart/info ul li\');
 					'; if ($setting_catalog_all['product_in_cart']) { $js[] = '
@@ -1156,14 +1156,14 @@ function get_revpopup_cart( product_id, action, quantity, block_id ) {
 								header_cart_element = "#top #cart-total_mobi";
 							} else {
 								'; if ($revtheme_header_cart['cart_position']) { $js[] = '
-									header_cart_element = "#top2 #cart";
+									header_cart_element = "#top #cart-total_mobi";
 								'; } else { $js[] = '
 									header_cart_element = "#top3 #cart";
 								'; } $js[] = '
 							}
 						'; } else { $js[] = '
 							'; if ($revtheme_header_cart['cart_position']) { $js[] = '
-								header_cart_element = "#top2 #cart";
+								header_cart_element = "#top #cart-total_mobi";
 							'; } else { $js[] = '
 								header_cart_element = "#top3 #cart";
 							'; } $js[] = '
@@ -1182,7 +1182,7 @@ function get_revpopup_cart( product_id, action, quantity, block_id ) {
 					'; } $js[] = '
 					$(\'#top #cart-total_mobi\').html(json[\'total\']);
 					$(\'#top3 #cart-total\').html(json[\'total\']);
-					$(\'#top2 #cart-total\').html(json[\'total\']);
+					$(\'#top #cart-total_mobi-total\').html(json[\'total\']);
 					$(\'#top3 #cart-total-popup\').html(json[\'total\']);
 					$(\'#cart > ul\').load(\'index.php?route=common/cart/info ul li\');
 					'; if ($setting_catalog_all['product_in_cart']) { $js[] = '
@@ -1281,14 +1281,14 @@ function get_revpopup_cart( product_id, action, quantity, block_id ) {
 								header_cart_element = "#top #cart-total_mobi";
 							} else {
 								'; if ($revtheme_header_cart['cart_position']) { $js[] = '
-									header_cart_element = "#top2 #cart";
+									header_cart_element = "#top #cart-total_mobi";
 								'; } else { $js[] = '
 									header_cart_element = "#top3 #cart";
 								'; } $js[] = '
 							}
 						'; } else { $js[] = '
 							'; if ($revtheme_header_cart['cart_position']) { $js[] = '
-								header_cart_element = "#top2 #cart";
+								header_cart_element = "#top #cart-total_mobi";
 							'; } else { $js[] = '
 								header_cart_element = "#top3 #cart";
 							'; } $js[] = '
@@ -1307,7 +1307,7 @@ function get_revpopup_cart( product_id, action, quantity, block_id ) {
 					'; } $js[] = '
 					$(\'#top #cart-total_mobi\').html(json[\'total\']);
 					$(\'#top3 #cart-total\').html(json[\'total\']);
-					$(\'#top2 #cart-total\').html(json[\'total\']);
+					$(\'#top #cart-total_mobi-total\').html(json[\'total\']);
 					$(\'#top3 #cart-total-popup\').html(json[\'total\']);
 					$(\'#cart > ul\').load(\'index.php?route=common/cart/info ul li\');
 					'; if ($setting_catalog_all['product_in_cart']) { $js[] = '
@@ -1385,14 +1385,14 @@ function get_revpopup_cart_option (opt_id, option, quantity, product_id) {
 							header_cart_element = "#top #cart-total_mobi";
 						} else {
 							'; if ($revtheme_header_cart['cart_position']) { $js[] = '
-								header_cart_element = "#top2 #cart";
+								header_cart_element = "#top #cart-total_mobi";
 							'; } else { $js[] = '
 								header_cart_element = "#top3 #cart";
 							'; } $js[] = '
 						}
 					'; } else { $js[] = '
 						'; if ($revtheme_header_cart['cart_position']) { $js[] = '
-							header_cart_element = "#top2 #cart";
+							header_cart_element = "#top #cart-total_mobi";
 						'; } else { $js[] = '
 							header_cart_element = "#top3 #cart";
 						'; } $js[] = '
@@ -1412,7 +1412,7 @@ function get_revpopup_cart_option (opt_id, option, quantity, product_id) {
 				'; } $js[] = '
 				$(\'#top #cart-total_mobi\').html(json[\'total\']);
 				$(\'#top3 #cart-total\').html(json[\'total\']);
-				$(\'#top2 #cart-total\').html(json[\'total\']);
+				$(\'#top #cart-total_mobi-total\').html(json[\'total\']);
 				$(\'#top3 #cart-total-popup\').html(json[\'total\']);
 				$(\'#cart > ul\').load(\'index.php?route=common/cart/info ul li\');
 				'; if ($setting_catalog_all['product_in_cart']) { $js[] = '

@@ -1,6 +1,6 @@
 <?php
 class ControllerRevolutionRevpopuplogin extends Controller {
-	
+
 	public function index() {
 
 		$data = array();
@@ -22,29 +22,29 @@ class ControllerRevolutionRevpopuplogin extends Controller {
 		}
 
 	}
-    
+
     public function getCustomerByEmail($email) {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE LOWER(email) = '" . $this->db->escape(utf8_strtolower($email)) . "'");
 
 		return $query->row;
 	}
-	
+
 	public function login() {
 		$json = array();
-		
+
 		$this->load->model('account/customer');
 		$this->load->language('common/header');
 		$this->load->language('revolution/revolution');
-		
+
 		$text_account = $this->language->get('text_account');
 		$account = $this->url->link('account/account', '', 'SSL');
-		
+
 		if (isset($this->request->post['email'])) {
 			$mail = $this->request->post['email'];
 		} else {
 			$mail = '';
 		}
-		
+
 		if (isset($this->request->post['password'])) {
 			$password = $this->request->post['password'];
 		} else {
@@ -52,9 +52,9 @@ class ControllerRevolutionRevpopuplogin extends Controller {
 		}
 
 		if (!$this->customer->login($mail, $password)) {
-            
+
             $customer = $this->getCustomerByEmail($mail);
-            if ($customer['customer_id'] && $customer['approved'] == 0) {
+            if (count($customer) && $customer['customer_id'] && $customer['approved'] == 0) {
                 $json['error'] = 'Необходимо подтвердить аккаунт перед авторизацией.';
             } else {
                 $json['error'] = $this->language->get('text_account_warning');
@@ -67,21 +67,21 @@ class ControllerRevolutionRevpopuplogin extends Controller {
 
 		if (!$json) {
 			$data['email'] = $this->request->post['email'];
-			$data['password'] = $this->request->post['password'];		
+			$data['password'] = $this->request->post['password'];
 		}
 
 		if (!$json) {
 			unset($this->session->data['guest']);
-			unset($this->session->data['shipping_country_id']);	
-			unset($this->session->data['shipping_zone_id']);	
+			unset($this->session->data['shipping_country_id']);
+			unset($this->session->data['shipping_zone_id']);
 			unset($this->session->data['shipping_postcode']);
-			unset($this->session->data['payment_country_id']);	
-			unset($this->session->data['payment_zone_id']);	
+			unset($this->session->data['payment_country_id']);
+			unset($this->session->data['payment_zone_id']);
 		}
-		
+
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
-		
+
 	}
 
 }

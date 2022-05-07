@@ -556,7 +556,7 @@ $(document).delegate('.popup_html_content', 'click', function(e) {
 				$(this).siblings('ul.dropdown-menu').html(html);
 			}
 
-			$(this).after('<ul class="dropdown-menu"></ul>');
+			$(this).after('<ul class="dropdown-menu" style="display: none;"></ul>');
 			$(this).siblings('ul.dropdown-menu').delegate('a', 'click', $.proxy(this.click, this));
 
 		});

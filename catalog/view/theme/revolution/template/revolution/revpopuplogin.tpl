@@ -59,7 +59,15 @@ $('#popup-checkout-button').on('click', function() {
 				$('#popup-order-okno .popup-center').html(json['output']);
 				$('.account_login_close').remove();
 				$('.account_login_close').remove();
-				location.reload();
+
+				// если пользователь находится на странице выхода из личного кабинета
+				if (location.search == '?route=account/logout') {
+					// перенаправляем в личный кабинет
+					location.replace(location.origin + '/index.php?route=revolution/account/revaccount');
+				} else {
+					location.reload();
+				}
+
 				//$('.account_login_close').after('<a id="popup-checkout-button" href="' + json['output_button1'] + '">' + json['output_button2'] + '</a');
 				//$('.account_login_close').attr('onclick', '$.magnificPopup.close(); location.reload();');
 				//$('.account_login_close').html('<?php echo $text_revpopuplogin_close; ?>');
